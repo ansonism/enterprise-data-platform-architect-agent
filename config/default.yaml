@@ -1,0 +1,41 @@
+{
+  "app": {
+    "name": "enterprise-data-platform-architect-agent",
+    "environment": "local"
+  },
+  "provider": {
+    "name": "mock",
+    "model": "mock-v1",
+    "timeout_seconds": 30,
+    "max_retries": 2
+  },
+  "workflow": {
+    "stages": [
+      "intake_and_normalize_requirements",
+      "identify_constraints_and_nfrs",
+      "generate_architecture_options",
+      "evaluate_security_governance_reliability_cost",
+      "challenge_options_with_critic",
+      "score_and_rank_options",
+      "produce_recommendation",
+      "generate_adr_and_implementation_roadmap"
+    ],
+    "checkpoint_each_stage": true,
+    "state_directory": "out/state"
+  },
+  "risk": {
+    "default_approval_threshold": "HIGH"
+  },
+  "approval": {
+    "mode": "manual",
+    "required_for_mutations": true
+  },
+  "observability": {
+    "log_level": "INFO",
+    "structured": true
+  },
+  "tools": {
+    "mode": "fake",
+    "allow_mutations": false
+  }
+}

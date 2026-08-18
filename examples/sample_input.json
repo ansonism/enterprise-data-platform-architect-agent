@@ -1,0 +1,17 @@
+{
+  "case_id": "demo-001",
+  "title": "Starter demo for Enterprise Data Platform Architect Agent",
+  "description": "Act as an enterprise data/platform architecture copilot that reasons over business goals, non-functional requirements, constraints, existing estate, governance requirements, and cloud/platform options before recommending a target architecture.",
+  "constraints": [
+    "Use mock provider",
+    "No external credentials",
+    "Dry-run only"
+  ],
+  "evidence": [
+    {
+      "id": "ev-1",
+      "type": "user_supplied",
+      "summary": "Example evidence placeholder"
+    }
+  ]
+}

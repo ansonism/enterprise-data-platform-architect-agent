@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: enterprise-data-platform-architect-agent
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: enterprise-data-platform-architect-agent
+  template:
+    metadata:
+      labels:
+        app: enterprise-data-platform-architect-agent
+    spec:
+      securityContext:
+        runAsNonRoot: true
+      containers:
+        - name: agent
+          image: REPLACE_WITH_REGISTRY/enterprise-data-platform-architect-agent:0.1.0
+          args: ["doctor"]
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "128Mi"
+            limits:
+              cpu: "500m"
+              memory: "512Mi"
